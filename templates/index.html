@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+        <h1>Signup</h1>
+        <form action="/welcome" method="post">
+
+            <label for="user-name">Name: 
+            <input id="user-name" type="text" name="user_name" value="{{ request.form['user_name'] }}" />
+            <span>{{ error_un }}</span>
+            <span>{{ error_empty_un }}</span>
+            </label>
+            <p>*Must be 3-20 characters</p>
+
+            <label for="password">Password: 
+            <input id="password" type="password" name="password" />
+            <span>{{ error_pw }}</span>
+            <span>{{ error_empty_pw }}</span>
+            <span>{{ error_re_pw }}</span>
+            </label>
+            <p>*Must be 3-20 characters</p>
+
+            <label for="re_password">Re-enter Password: 
+            <input id="re_password" type="password" name="re_password" />
+            <span>{{ error_pw }}</span>
+            <span>{{ error_empty_pw }}</span>
+            </label>
+            <p>*Must be 3-20 characters</p>
+
+            <label for="email">Email (optional): </label>
+            <input id="email" type="text" name="email" value="{{ request.form['email'] }}" />
+            <span>{{ error_email_length }}</span>
+            <span>{{ error_email_syntax }}</span>
+            </label>
+            <p>*Must be 3-20 characters</p>
+
+            <p>
+            <input type="submit" />
+            </p>
+        </form>
+        </div>
+
+{% endblock %}
